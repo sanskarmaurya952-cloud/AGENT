@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --background: 222 47% 5%;
+  --foreground: 210 40% 98%;
+  --card: 222 47% 8%;
+  --card-foreground: 210 40% 98%;
+  --popover: 222 47% 8%;
+  --popover-foreground: 210 40% 98%;
+  --primary: 188 95% 57%;
+  --primary-foreground: 222 47% 5%;
+  --secondary: 217 33% 15%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 217 33% 13%;
+  --muted-foreground: 215 20% 68%;
+  --accent: 199 89% 48%;
+  --accent-foreground: 222 47% 5%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 217 33% 18%;
+  --input: 217 33% 18%;
+  --ring: 188 95% 57%;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-background text-foreground antialiased;
+  background:
+    radial-gradient(circle at top left, rgba(34, 211, 238, 0.14), transparent 30%),
+    radial-gradient(circle at top right, rgba(59, 130, 246, 0.18), transparent 35%),
+    linear-gradient(180deg, #020617 0%, #020617 40%, #07111f 100%);
+}
+
+.glass-panel {
+  @apply border border-white/10 bg-white/[0.04] backdrop-blur-2xl shadow-premium;
+}
+
+.glass-card {
+  @apply rounded-3xl border border-white/10 bg-white/[0.04] backdrop-blur-xl shadow-premium;
+}
+
+.gradient-border {
+  position: relative;
+}
+
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.7), rgba(59, 130, 246, 0.3), rgba(16, 185, 129, 0.2));
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.25);
+  border-radius: 9999px;
+}
+
+.noise {
+  background-image: linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
